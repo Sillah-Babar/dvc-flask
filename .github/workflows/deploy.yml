@@ -11,11 +11,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Copy Files
-      run: zip -r deploy_package.zip ./
-      
     - name: Create ZIP deployment package
       run:  sudo cp -ra  api/* ./
+    - name: Copy Files
+      run: zip -r deploy_package.zip ./
 
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
